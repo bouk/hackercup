@@ -3,7 +3,7 @@ m = gets.chomp.to_i
 m.times do |i|
   h = Hash[('a'..'z').zip [0] * 26]
   gets.chomp.downcase.each_char do |c|
-    if 'a' <= c and c <= 'z'
+    if ('a'..'z').include? c
       h[c] += 1
     end
   end
