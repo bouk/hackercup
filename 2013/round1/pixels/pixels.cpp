@@ -1,3 +1,4 @@
+// NOTE: This program is too slow to solve the testcases
 #include <set>
 #include <vector>
 #include <iostream>
@@ -19,17 +20,13 @@ void testcase(int t)
     int prevx = X;
     int prevy = Y;
     pixels[X].insert(Y);
-
-        // cerr << prevx << ':' << prevy << endl;
     for (int i = 1; i < N; i++)
     {
         int newx = (prevx * a + prevy * b + 1) % W;
         prevy = (prevx * c + prevy * d + 1) % H;
         prevx = newx;
         pixels[prevx].insert(prevy);
-        // cerr << prevx << ':' << prevy << endl;
     }
-    // cerr << endl;
 
     unsigned long long open = 0;
 
